@@ -4,6 +4,7 @@ using EtlExtractionWorker.Extractors;
 using EtlExtractionWorker.Staging;
 
 var builder = Host.CreateApplicationBuilder(args);
+builder.Services.AddSingleton<EtlExtractionWorker.Loaders.DimensionLoader>();
 
 builder.Services.AddHttpClient("CommentsApi", client =>
 {
